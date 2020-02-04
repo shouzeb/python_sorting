@@ -1,33 +1,32 @@
-def mergeSort(nlist):
-    print("Splitting ",nlist)
-    if len(nlist)>1:
-        mid = len(nlist)//2
-        lefthalf = nlist[:mid]
-        righthalf = nlist[mid:]
-
-        mergeSort(lefthalf)
-        mergeSort(righthalf)
+def mergeSort(arrayToSort):
+    print("Splitting ",arrayToSort)
+    if len(arrayToSort)>1:
+        midOfArray = len(arrayToSort)//2
+        lefthalfOfArray = arrayToSort[:midOfArray]
+        righthalfOfArray = arrayToSort[midOfArray:]
+        mergeSort(lefthalfOfArray)
+        mergeSort(righthalfOfArray)
         i=j=k=0       
-        while i < len(lefthalf) and j < len(righthalf):
-            if lefthalf[i] < righthalf[j]:
-                nlist[k]=lefthalf[i]
+        while i < len(lefthalfOfArray) and j < len(righthalfOfArray):
+            if lefthalfOfArray[i] < righthalfOfArray[j]:
+                arrayToSort[k]=lefthalfOfArray[i]
                 i=i+1
             else:
-                nlist[k]=righthalf[j]
+                arrayToSort[k]=righthalfOfArray[j]
                 j=j+1
             k=k+1
 
-        while i < len(lefthalf):
-            nlist[k]=lefthalf[i]
+        while i < len(lefthalfOfArray):
+            arrayToSort[k]=lefthalfOfArray[i]
             i=i+1
             k=k+1
 
-        while j < len(righthalf):
-            nlist[k]=righthalf[j]
+        while j < len(righthalfOfArray):
+            arrayToSort[k]=righthalfOfArray[j]
             j=j+1
             k=k+1
-    print("Merging ",nlist)
+    print("Merging ",arrayToSort)
 
-nlist = [14,46,43,27,57,41,45,21,70]
-mergeSort(nlist)
-print(nlist)
+arrayToSort = [14,46,43,27,57,41,45,21,70]
+mergeSort(arrayToSort)
+print(arrayToSort)
