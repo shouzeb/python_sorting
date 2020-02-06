@@ -5,18 +5,18 @@ Created on Thu Feb  6 22:44:15 2020
 @author: Shouzeb
 """
 
-def bucket_sort(alist):
-    largest = max(alist)
-    length = len(alist)
+def bucket_sort(array):
+    largest = max(array)
+    length = len(array)
     size = largest/length
  
     buckets = [[] for _ in range(length)]
     for i in range(length):
-        j = int(alist[i]/size)
+        j = int(array[i]/size)
         if j != length:
-            buckets[j].append(alist[i])
+            buckets[j].append(array[i])
         else:
-            buckets[length - 1].append(alist[i])
+            buckets[length - 1].append(array[i])
  
     for i in range(length):
         insertion_sort(buckets[i])
@@ -27,18 +27,18 @@ def bucket_sort(alist):
  
     return result
  
-def insertion_sort(alist):
-    for i in range(1, len(alist)):
-        temp = alist[i]
+def insertion_sort(array):
+    for i in range(1, len(array)):
+        temp = array[i]
         j = i - 1
-        while (j >= 0 and temp < alist[j]):
-            alist[j + 1] = alist[j]
+        while (j >= 0 and temp < array[j]):
+            array[j + 1] = array[j]
             j = j - 1
-        alist[j + 1] = temp
+        array[j + 1] = temp
  
  
-alist = input('Enter the list of (nonnegative) numbers: ').split()
-alist = [int(x) for x in alist]
-sorted_list = bucket_sort(alist)
+array = input('Enter the list of (nonnegative) numbers: ').split()
+array = [int(x) for x in array]
+sorted_list = bucket_sort(array)
 print('Sorted list: ', end='')
 print(sorted_list)
