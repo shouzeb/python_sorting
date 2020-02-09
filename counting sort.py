@@ -1,10 +1,18 @@
-import random, math
- 
+# -*- coding: utf-8 -*-
+"""
+
+Created on Fri Feb  7 21:44:52 2020
+
+@author: Shouzeb
+"""
+
+# counting Sort In Python
+#
 def get_sortkey(n):
     """ Define the method to retrieve the key """
     return n
  
-def counting_sort(tlist, k, get_sortkey):
+def counting_sort(array, k, get_sortkey):
     """ Counting sort algo with sort in place.
         Args:
             tlist: target list to sort
@@ -17,11 +25,11 @@ def counting_sort(tlist, k, get_sortkey):
  
     """
  
-    # Create a count list and using the index to map to the integer in tlist.
+    # Create a count list and using the index to map to the integer in list.
     count_list = [0]*(k)
  
     # iterate the tgt_list to put into count list
-    for n in tlist:
+    for n in array:
         count_list[get_sortkey(n)] = count_list[get_sortkey(n)] + 1 
  
     # Modify count list such that each index of count list is the combined sum of the previous counts
@@ -32,21 +40,20 @@ def counting_sort(tlist, k, get_sortkey):
         else:
             count_list[i] += count_list[i-1]
  
-    output = [None]*len(tlist)
-    for i in range(len(tlist)-1, -1, -1):
-        sortkey = get_sortkey(tlist[i])
-        output[count_list[sortkey]-1] = tlist[i]
+    output = [None]*len(array)
+    for i in range(len(array)-1, -1, -1):
+        sortkey = get_sortkey(array[i])
+        output[count_list[sortkey]-1] = array[i]
         count_list[sortkey] -=1
  
     return output
  
-## Create random list for demo counting sort.
-random.seed(0)
-tgt_list = [random.randint(0,20) for n in range(10)]
+## Create list for demo counting sort.
+unsorted_list = [8,2,1,3,5,4180,0,150,80]
 print("Unsorted List")
-print(tgt_list)
+print(unsorted_list)
  
 ## Perform the counting sort.
-print("\nSorted list using basic counting sort")
-output = counting_sort(tgt_list, max(tgt_list) +1, get_sortkey) # assumption is known the max value in tgtlist  for this case.
+print("\nSorted list")
+output = counting_sort(unsorted_list, max(unsorted_list) +1, get_sortkey) # assumption is known the max value in tgtlist  for this case.
 print(output)
