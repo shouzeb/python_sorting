@@ -39,6 +39,9 @@ def insertion_sort(array):
  
 array = input('Enter the list of (nonnegative) numbers: ').split()
 array = [int(x) for x in array]
+
+ #unsorted array
 sorted_list = bucket_sort(array)
+#to print sorted array
 print('Sorted list: ', end='')
 print(sorted_list)

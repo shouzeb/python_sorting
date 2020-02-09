@@ -27,6 +27,8 @@ def quicksortOfArray(array, beginPoint=0, endPoint=None):
         _quicksort(array, pivotPoint+1, endPoint)
     return _quicksort(array, beginPoint, endPoint)
 
+ #unsorted array
 array = [97, 200, 100, 101, 211, 107]
+#to print sorted array
 quicksortOfArray(array)
 print(array)

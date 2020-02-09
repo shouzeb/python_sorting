@@ -27,6 +27,8 @@ def mergeSort(arrayToSort):
             k=k+1
     print("Merging ",arrayToSort)
 
+ #unsorted array
 arrayToSort = [14,46,43,27,57,41,45,21,70]
+#to print sorted array
 mergeSort(arrayToSort)
 print(arrayToSort)

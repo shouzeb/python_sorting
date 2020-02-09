@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """
+
 Created on Fri Feb  7 21:44:52 2020
 
 @author: Shouzeb
@@ -25,7 +26,7 @@ def insertionSortFunction(array):
         array[position] = current
 
     return array
-
+#unsorted array
 array = [8,2,1,3,5,4180,0,150,80]
-
+#to print sorted array
 print(insertionSortFunction(array))
