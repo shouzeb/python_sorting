@@ -5,7 +5,10 @@ Created on Mon Feb 10 21:58:50 2020
 @author: Shouzeb
 """
 
-def heapify(arr, n, i):
+
+# heap Sort In Python
+
+def heap_sort(arr, n, i):
     # Find largest among root and children
     largest = i
     l = 2 * i + 1
@@ -20,27 +23,26 @@ def heapify(arr, n, i):
     # If root is not largest, swap with largest and continue heapifying
     if largest != i:
         arr[i],arr[largest] = arr[largest],arr[i]
-        heapify(arr, n, largest)
+        heap_sort(arr, n, largest)
  
 def heapSort(arr):
     n = len(arr)
  
     # Build max heap
     for i in range(n, 0, -1):
-        heapify(arr, n, i)
+        heap_sort(arr, n, i)
  
     
     for i in range(n-1, 0, -1):
         # swap
         arr[i], arr[0] = arr[0], arr[i]  
         
-        #heapify root element
-        heapify(arr, i, 0)
- 
+        #heap_sort root element
+        heap_sort(arr, i, 0)
+ #unsorted array
 arr = [ 12, 11, 13, 5, 6, 7]
 print("Unsorted array is",arr)
 heapSort(arr)
 n = len(arr)
-print ("Sorted array is")
-for i in range(n):
-    print ("%d" %arr[i])
+#sorted array
+print ("Sorted array is",arr)
