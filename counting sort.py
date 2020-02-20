@@ -55,5 +55,5 @@ print(unsorted_list)
  
 ## Perform the counting sort.
 print("\nSorted list")
-output = counting_sort(unsorted_list, max(unsorted_list) +1, get_sortkey) # assumption is known the max value in tgtlist  for this case.
+output = counting_sort(unsorted_list, max(unsorted_list) +1, get_sortkey) # assumption is known the max value in list  for this case.
 print(output)
